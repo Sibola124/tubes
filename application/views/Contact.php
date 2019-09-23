@@ -4,10 +4,7 @@
       <div class="col">
         <div class="card">
           <div class="text-center">
-            <h3>Contact Us</h3>
-            <p>general enquiries please email <br> info@potmeetspopdenim.com</p>
-            <p>whatsapp <br> +62 817-1717-7420</p>
-            <p>line<br> @potmeetspopdenim</p>
+            <h3>Sign Up</h3>
           </div>
           <div class="card-body">
             <form action="<?php base_url('Kontak/add') ?>" method="post">
@@ -21,17 +18,17 @@
                 <input type="email" class="form-control" id="email" name="email" placeholder="Email">
                 <small class="form-text text-danger"><?= form_error('email') ?></small>
               </div>
-              <!-- Phone Number -->
+              <!-- Username -->
               <div class="form-group">
-                <input type="text" class="form-control" id="telp" name="telp" placeholder="Phone Number">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
                 <small class="form-text text-danger"><?= form_error('telp') ?></small>
               </div>
-              <!-- Message -->
+              <!-- Password -->
               <div class="form-group">
-                <textarea class="form-control" id="pesan" name="pesan" rows="6" placeholder="Message"></textarea>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 <small class="form-text text-danger"><?= form_error('pesan') ?></small>
               </div>
-                <button type="submit" name="send" class="btn btn-success float-right">SEND</button>
+                <button type="submit" name="send" class="btn btn-success float-right">Confirm</button>
             </form>
           </div>
         </div>
