@@ -4,7 +4,7 @@
       <div class="col">
         <div class="card">
           <div class="text-center">
-            <h3>Sign Up</h3>
+            <h3>Daftar</h3>
           </div>
           <div class="card-body">
             <form action="<?php base_url('registrasi') ?>" method="post">
@@ -28,7 +28,9 @@
                 <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                 <small class="form-text text-danger"><?= form_error('password') ?></small>
               </div>
-                <button type="submit" name="send" class="btn btn-success float-right">Confirm</button>
+              <center>
+              	<button type="submit" name="send" class="btn btn-success" style="background-color: black;">Submit</button>
+              </center>   
             </form>
           </div>
         </div>
