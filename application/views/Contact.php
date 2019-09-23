@@ -7,7 +7,7 @@
             <h3>Sign Up</h3>
           </div>
           <div class="card-body">
-            <form action="<?php base_url('Kontak/add') ?>" method="post">
+            <form action="<?php base_url('registrasi') ?>" method="post">
               <!-- Name -->  
               <div class="form-group">
                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Name">
@@ -21,12 +21,12 @@
               <!-- Username -->
               <div class="form-group">
                 <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-                <small class="form-text text-danger"><?= form_error('telp') ?></small>
+                <small class="form-text text-danger"><?= form_error('username') ?></small>
               </div>
               <!-- Password -->
               <div class="form-group">
                 <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-                <small class="form-text text-danger"><?= form_error('pesan') ?></small>
+                <small class="form-text text-danger"><?= form_error('password') ?></small>
               </div>
                 <button type="submit" name="send" class="btn btn-success float-right">Confirm</button>
             </form>

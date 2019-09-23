@@ -13,7 +13,7 @@ class Kontak extends CI_Controller
 
     public function add()
     {
-        $data['judul'] = 'Contact Us';
+        $data['judul'] = 'Sign Up';
         $kontak = $this->Kontak_model;
         $validation = $this->form_validation;
         $validation->set_rules($kontak->rules());

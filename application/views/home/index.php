@@ -47,25 +47,57 @@
     </div>
     <div class="row">
         <div class="col">
-            <h3 class="text-center" style="margin: 100px;">Feature</h3>
+            <h3 class="text-center" style="margin: 100px;">Berita</h3>
         </div>
     </div>
     <div class="row">
-        <?php foreach ($produk as $pr): ?>
-            <div class="col-3 h-100 mb-3">
-                <div class="card">
+        <div class="col-3 h-100 mb-3">
+            <div class="card">
+                <a href="#">
+                    <img src="<?php echo base_url('images/berita1.jpg')?>" class="card-img-top" alt="..." height="400">
+                </a>
+                <div class="card-body">
                     <a href="#">
-                        <img src="<?php echo base_url('images/'.$pr->img)?>" onmouseover="this.src='<?php echo base_url('images/'.$pr->img2)?>';" onmouseout="this.src='<?php echo base_url('images/'.$pr->img)?>';" class="card-img-top" alt="..." height="400">
-                    </a>
-                    <div class="card-body">
-                        <a href="#">
-                            <h5 class="card-title text-center"><?php echo $pr->nama ?></h5>
-                            <p class="card-text text-center" style="color: grey;">Rp <?php echo $pr->harga ?></p>
-                        </a>
-                        
-                    </div>
+                        <h5 class="card-title text-center">TES</h5>
+                    </a>    
                 </div>
             </div>
-        <?php endforeach ?>
+        </div>
+        <div class="col-3 h-100 mb-3">
+            <div class="card">
+                <a href="#">
+                    <img src="<?php echo base_url('images/berita1.jpg')?>" class="card-img-top" alt="..." height="400">
+                </a>
+                <div class="card-body">
+                    <a href="#">
+                        <h5 class="card-title text-center">TES</h5>
+                    </a>    
+                </div>
+            </div>
+        </div>
+        <div class="col-3 h-100 mb-3">
+            <div class="card">
+                <a href="#">
+                    <img src="<?php echo base_url('images/berita1.jpg')?>" class="card-img-top" alt="..." height="400">
+                </a>
+                <div class="card-body">
+                    <a href="#">
+                        <h5 class="card-title text-center">TES</h5>
+                    </a>    
+                </div>
+            </div>
+        </div>
+        <div class="col-3 h-100 mb-3">
+            <div class="card">
+                <a href="#">
+                    <img src="<?php echo base_url('images/berita1.jpg')?>" class="card-img-top" alt="..." height="400">
+                </a>
+                <div class="card-body">
+                    <a href="#">
+                        <h5 class="card-title text-center">TES</h5>
+                    </a>    
+                </div>
+            </div>
+        </div>
     </div>
 </div> 

@@ -2,12 +2,13 @@
 
 class Kontak_model extends CI_Model
 {
-    private $_table = "kontak";
+    private $_table = "user";
 
+    public $id_user;
     public $nama;
     public $email;
-    public $telp;
-    public $pesan;
+    public $username;
+    public $password;
 
     public function rules()
     {
@@ -20,11 +21,11 @@ class Kontak_model extends CI_Model
             'label' => 'Email',
             'rules' => 'required'],
 
-            ['field' => 'telp',
+            ['field' => 'username',
             'label' => 'Phone Number',
             'rules' => 'required'],
             
-            ['field' => 'pesan',
+            ['field' => 'password',
             'label' => 'Message',
             'rules' => 'required']
         ];
@@ -33,10 +34,11 @@ class Kontak_model extends CI_Model
     public function save()
     {
         $post = $this->input->post();
+        $this->id_user = uniqid();
         $this->nama = $post["nama"];
         $this->email = $post["email"];
-        $this->telp = $post["telp"];
-        $this->pesan = $post["pesan"];
+        $this->username = $post["username"];
+        $this->password = $post["password"];
         $this->db->insert($this->_table, $this);
     }
 }
