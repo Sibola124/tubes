@@ -1,48 +1,23 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Daftar_model extends CI_Model
+class Tim_model extends CI_Model
 {
     private $_table = "tim";
 
     public $id_tim;
     public $nama;
-    public $poin;
     public $lokasi;
     public $id_pemain;
+ 
 
-    public function rules()
+    public function getAll()
     {
-        return [
-            ['field' => 'id_tim',
-            'label' => 'Id Tim',
-            'rules' => 'required'],
-
-            ['field' => 'nama',
-            'label' => 'Nama',
-            'rules' => 'required'],
-
-            ['field' => 'poin',
-            'label' => 'Poin',
-            'rules' => 'required'],
-            
-            ['field' => 'Lokasi',
-            'label' => 'lokasi',
-            'rules' => 'required']
-
-            ['field' => 'Id_pemain',
-            'label' => 'Id pemain',
-            'rules' => 'required']
-        ];
+        return $this->db->get($this->_table)->result();
+    }
+    
+    public function getById($id)
+    {
+        return $this->db->get_where($this->_table, ["id_tim" => $id_tim])->row();
     }
 
-    public function save()
-    {
-        $post = $this->input->post();
-        $this->id_tim = $post["id_tim"];
-        $this->nama = $post["nama"];
-        $this->poin = $post["poin"];
-        $this->lokasi = $post["lokasi"];
-        $this->id_pemain = $post["id_pemain"];
-        $this->db->insert($this->_table, $this);
-    }
 }

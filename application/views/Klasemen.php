@@ -1,103 +1,38 @@
-<style>
-    a{
-        color: #003300;
-        
-    }
-    a:hover{
-        text-decoration: none;
-        color: #006600;
-    }
-</style>
-<div class="main-container">
-    <div class="row">
-        <div class="col">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="<?php echo base_url('images/carousel/1.jpg')?>"  alt="First slide">
-                        <div class="carousel-caption d-none d-md-block">
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="<?php echo base_url('images/carousel/2.jpg')?>" alt="Second slide">
-                        <div class="carousel-caption d-none d-md-block">
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="<?php echo base_url('images/carousel/3.jpg')?>"  alt="Third slide">
-                        <div class="carousel-caption d-none d-md-block">
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
+
+<div class="container" style="margin-top: 150px; margin-bottom: 150px;">
+    <div class="row mt-3">
+      <div class="col">
+        <div class="card">
+          <div class="text-center">
+            <h3>Klasemen</h3>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead style="background-color: #262626;">
+                <tr style="color: white;">
+                  <th scope="col">Pos</th>
+                  <th scope="col">Tim</th>
+                  <th scope="col">Poin</th>
+                 
+                  </tr>
+              </thead>
+              <tbody style="color: black; background-color: #f2f2f2;">
+                <?php 
+                $i = 1;
+                foreach ($tim as $t): ?>
+                  <tr>
+                    <th scope="row"><?php echo $i++ ?></th>
+                    <td><?php echo $t->nama ?></td>
+                    <td><?php echo $t->poin ?></td>
+                   
+                </tr>
+                
+                <?php endforeach ?>
+                
+              </tbody>
+            </table>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <h3 class="text-center" style="margin: 100px;">Berita</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-3 h-100 mb-3">
-            <div class="card">
-                <a href="#">
-                    <img src="<?php echo base_url('images/berita1.jpg')?>" class="card-img-top" alt="..." height="400">
-                </a>
-                <div class="card-body">
-                    <a href="#">
-                        <h5 class="card-title text-center">TES</h5>
-                    </a>    
-                </div>
-            </div>
-        </div>
-        <div class="col-3 h-100 mb-3">
-            <div class="card">
-                <a href="#">
-                    <img src="<?php echo base_url('images/berita1.jpg')?>" class="card-img-top" alt="..." height="400">
-                </a>
-                <div class="card-body">
-                    <a href="#">
-                        <h5 class="card-title text-center">TES</h5>
-                    </a>    
-                </div>
-            </div>
-        </div>
-        <div class="col-3 h-100 mb-3">
-            <div class="card">
-                <a href="#">
-                    <img src="<?php echo base_url('images/berita1.jpg')?>" class="card-img-top" alt="..." height="400">
-                </a>
-                <div class="card-body">
-                    <a href="#">
-                        <h5 class="card-title text-center">TES</h5>
-                    </a>    
-                </div>
-            </div>
-        </div>
-        <div class="col-3 h-100 mb-3">
-            <div class="card">
-                <a href="#">
-                    <img src="<?php echo base_url('images/berita1.jpg')?>" class="card-img-top" alt="..." height="400">
-                </a>
-                <div class="card-body">
-                    <a href="#">
-                        <h5 class="card-title text-center">TES</h5>
-                    </a>    
-                </div>
-            </div>
-        </div>
-    </div>
-</div> 
+  </div>

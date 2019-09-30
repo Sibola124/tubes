@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2019 at 04:58 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Sep 30, 2019 at 09:24 AM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tubes`
+-- Database: `sibola`
 --
 
 -- --------------------------------------------------------
@@ -66,6 +66,22 @@ CREATE TABLE `tim` (
   `lokasi` varchar(255) NOT NULL,
   `id_pemain` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tim`
+--
+
+INSERT INTO `tim` (`id_tim`, `nama`, `poin`, `lokasi`, `id_pemain`) VALUES
+(0, 'PersiBanten', 100, 'Banten', NULL),
+(1, 'Persija', 50, 'Jakarta', NULL),
+(2, 'PSM', 48, 'Makassar', NULL),
+(3, 'Barito Putera', 45, 'Barito', NULL),
+(4, 'Sriwijaya FC', 44, 'Palembang', NULL),
+(5, 'Persipura', 44, 'Papua', NULL),
+(6, 'Bali United', 42, 'Bali', NULL),
+(7, 'MU', 40, 'Madura', NULL),
+(8, 'Bojong Pride', 35, 'Bojongsoang', NULL),
+(9, 'Persib', 2, 'Bandung', NULL);
 
 -- --------------------------------------------------------
 
