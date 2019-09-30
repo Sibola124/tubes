@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2019 at 10:38 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Generation Time: Sep 24, 2019 at 04:58 AM
+-- Server version: 10.4.6-MariaDB
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,102 +25,115 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Table structure for table `pemain`
 --
 
-CREATE TABLE `admin` (
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+CREATE TABLE `pemain` (
+  `id_pemain` int(11) NOT NULL,
+  `nama` varchar(255) DEFAULT NULL,
+  `usia` int(11) DEFAULT NULL,
+  `role` varchar(255) DEFAULT NULL,
+  `gaji` int(11) NOT NULL,
+  `tim` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`username`, `password`) VALUES
-('admin', 'admin');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kontak`
+-- Table structure for table `pertandingan`
 --
 
-CREATE TABLE `kontak` (
-  `kontak_id` int(11) NOT NULL,
+CREATE TABLE `pertandingan` (
+  `id_pertandingan` int(11) NOT NULL,
+  `tim1` int(11) NOT NULL,
+  `tim2` int(11) NOT NULL,
+  `score1` int(11) NOT NULL,
+  `score2` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `poin` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tim`
+--
+
+CREATE TABLE `tim` (
+  `id_tim` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `telp` int(11) NOT NULL,
-  `pesan` varchar(255) NOT NULL
+  `poin` int(11) NOT NULL,
+  `lokasi` varchar(255) NOT NULL,
+  `id_pemain` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `kontak`
---
-
-INSERT INTO `kontak` (`kontak_id`, `nama`, `email`, `telp`, `pesan`) VALUES
-(2, 'jajang', 'jajang@gmail.com', 8123141, 'tes');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Table structure for table `user`
 --
 
-CREATE TABLE `produk` (
-  `id` int(5) NOT NULL,
-  `nama` varchar(100) NOT NULL,
-  `harga` double NOT NULL,
-  `jenis` varchar(10) NOT NULL,
-  `jumlah` int(5) NOT NULL,
-  `img` varchar(100) NOT NULL,
-  `img2` varchar(100) NOT NULL
+CREATE TABLE `user` (
+  `id_user` int(11) NOT NULL,
+  `nama` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `produk`
+-- Dumping data for table `user`
 --
 
-INSERT INTO `produk` (`id`, `nama`, `harga`, `jenis`, `jumlah`, `img`, `img2`) VALUES
-(24, 'SKUNK DARK BLUE S/S 19', 600000, 'Jackets', 10, 'Skunk_Dark_Blue_1.PNG', 'Skunk_Dark_Blue_2.PNG'),
-(25, 'CHRONIC CARGO SHORT BLUE S/S 19', 450000, 'Pants', 10, 'Chronic_Cargo_Short_Blue_1.PNG', 'Chronic_Cargo_Short_Blue_2.PNG'),
-(26, 'CHRONIC CARGO SHORT RED S/S 19', 450000, 'Pants', 10, 'Chronic_Cargo_Short_Red_1.PNG', 'Chronic_Cargo_Short_Red_2.PNG'),
-(27, 'FATTY FATIQUE MAROON S/S 19', 550000, 'Pants', 10, 'Fatty_Fatique_Pant_Maroon_1.PNG', 'Fatty_Fatique_Pant_Maroon_2.PNG'),
-(28, 'FATTY FATIQUE CHARCOAL S/S 19', 550000, 'Pants', 10, 'Fatty_Fatique_Pant_Charcoal_1.PNG', 'Fatty_Fatique_Pant_Charcoal_2.PNG'),
-(29, 'THAISTICK INDIGO S/S 19', 600000, 'Pants', 10, 'Thaistick_Indigo_1.PNG', 'Thaistick_Indigo_2.PNG'),
-(30, 'tes', 5000, 'Pants', 50, '', '');
+INSERT INTO `user` (`id_user`, `nama`, `email`, `username`, `password`) VALUES
+(0, '', '0', 'admin', 'admin'),
+(5, 'Paijo', 'paijo@gmol.com', 'paijo', 'paijo');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `kontak`
+-- Indexes for table `pemain`
 --
-ALTER TABLE `kontak`
-  ADD PRIMARY KEY (`kontak_id`);
+ALTER TABLE `pemain`
+  ADD PRIMARY KEY (`id_pemain`),
+  ADD KEY `tim` (`tim`);
 
 --
--- Indexes for table `produk`
+-- Indexes for table `pertandingan`
 --
-ALTER TABLE `produk`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `pertandingan`
+  ADD PRIMARY KEY (`id_pertandingan`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indexes for table `tim`
+--
+ALTER TABLE `tim`
+  ADD PRIMARY KEY (`id_tim`),
+  ADD KEY `id_pemain` (`id_pemain`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- Constraints for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `kontak`
+-- Constraints for table `pemain`
 --
-ALTER TABLE `kontak`
-  MODIFY `kontak_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `pemain`
+  ADD CONSTRAINT `pemain_ibfk_1` FOREIGN KEY (`tim`) REFERENCES `tim` (`id_tim`);
 
 --
--- AUTO_INCREMENT for table `produk`
+-- Constraints for table `tim`
 --
-ALTER TABLE `produk`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+ALTER TABLE `tim`
+  ADD CONSTRAINT `tim_ibfk_1` FOREIGN KEY (`id_pemain`) REFERENCES `pemain` (`id_pemain`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

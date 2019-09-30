@@ -37,26 +37,26 @@
             <a class="nav-link" href="<?= base_url(); ?>">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">JADWAL</a>
+            <a class="nav-link" href="<?= base_url(); ?>Jadwal">JADWAL</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">PERTANDINGAN</a>
+            <a class="nav-link" href="<?= base_url(); ?>Pertandingan">PERTANDINGAN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">KLASEMEN</a>
+            <a class="nav-link" href="<?= base_url(); ?>Klasemen">KLASEMEN</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">TIM</a>
+            <a class="nav-link" href="<?= base_url(); ?>Tim">TIM</a>
           </li>
         </ul>
       </strong>
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url(); ?>kontak/add">Daftar</a>
+                <a class="nav-link" href="<?= base_url(); ?>Daftar/input">Daftar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url(); ?>auth/login">Login</a>
+                <a class="nav-link" href="<?= base_url(); ?>Login/inputlogin">Login</a>
             </li>
         </ul>
     </div>
