@@ -22,7 +22,7 @@
                 foreach ($tim as $t): ?>
                   <tr>
                     <th scope="row"><?php echo $i++ ?></th>
-                    <td><?php echo $t->nama ?></td>
+                    <td><img src="<?php echo base_url('images/'.$t->img)?>" style="width:25px; height:25px;"><text>  </text><?php echo $t->nama ?></td>
                     <td><?php echo $t->poin ?></td>
                    
                 </tr>

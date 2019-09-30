@@ -16,8 +16,7 @@
                 $i = 1;
                 foreach ($tim as $t): ?>
                   <tr>
-                    <td><center><img src="<?php echo base_url('images/'.$t->img)?>" style="width:40px; height:40px;"></center></td>
-                    <td><?php echo $t->nama ?></td>                   
+                    <td><img src="<?php echo base_url('images/'.$t->img)?>" style="width:25px; height:25px;"><text>  </text><?php echo $t->nama ?></td>               
                 </tr>
                 
                 <?php endforeach ?>
