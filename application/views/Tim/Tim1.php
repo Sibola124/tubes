@@ -1,11 +1,9 @@
-
-
 <div class="container" style="margin-top: 150px; margin-bottom: 150px;">
     <div class="row mt-3">
       <div class="col">
         <div class="card">
           <div class="text-center">
-            <h3>Tim</h3>
+            <h3>Pemain</h3>
           </div>
           <div class="card-body">
             <table class="table">
@@ -14,11 +12,13 @@
               <tbody style="color: black; background-color: #f2f2f2;">
                 <?php 
                 $i = 1;
-                foreach ($tim as $t): ?>
+                foreach ($pemain as $p): ?>
                   <tr>
-                    <td><img src="<?php echo base_url('images/'.$t->img)?>" style="width:25px; height:25px;"> <a class="nav-link" href="<?= site_url("Tim/Tim".$i); ?>" ><font color=black><?php echo $t->nama ?></a></font></td>   
-                    <?php $i++; ?>      
-                  </tr>
+                    <td></text><?php echo $p->nama ?></td>  
+                    <td></text><?php echo $p->usia ?></td> 
+                    <td></text><?php echo $p->role ?></td> 
+                    <td></text><?php echo $p->gaji ?></td> 
+                </tr>
                 
                 <?php endforeach ?>
                 

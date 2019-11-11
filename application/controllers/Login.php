@@ -32,3 +32,4 @@ class Login extends CI_Controller {
         redirect(site_url('login'));
     }
 }
+
