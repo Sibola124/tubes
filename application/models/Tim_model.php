@@ -8,7 +8,19 @@ class Tim_model extends CI_Model
     public $nama;
     public $lokasi;
     public $id_pemain;
- 
+    
+    public function rules()
+    {
+        return [
+            ['field' => 'nama',
+            'label' => 'Nama',
+            'rules' => 'required'],
+
+            ['field' => 'lokasi',
+            'label' => 'Lokasi',
+            'rules' => 'required']
+        ];
+    }
 
     public function getAll()
     {
@@ -20,4 +32,13 @@ class Tim_model extends CI_Model
         return $this->db->get_where($this->_table, ["id_tim" => $id_tim])->row();
     }
 
+    public function saveTim($image)
+    {
+        $post = $this->input->post();
+        // $this->id = uniqid();
+        $this->nama = $post["nama"];
+        $this->harga = $post["lokasi"];
+        $this->img = $image;
+        $this->db->insert($this->_table, $this);
+    }
 }
