@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2019 at 06:51 PM
+-- Generation Time: Nov 11, 2019 at 07:06 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -42,9 +42,10 @@ CREATE TABLE `pemain` (
 --
 
 INSERT INTO `pemain` (`id_pemain`, `nama`, `usia`, `role`, `gaji`, `tim`) VALUES
-(11, 'Paijo', 20, 'Striker', 100000, 0),
-(12, 'Akbariyah', 20, 'Defender', 500000, 0),
-(13, 'Devani', 20, 'Goalkeeper', 300000, 0);
+(11, 'Paijo', 20, 'Striker', 15000000, 0),
+(12, 'Akbariyah', 20, 'Defender', 12000000, 0),
+(13, 'Depani', 20, 'Goalkeeper', 10000000, 0),
+(14, 'Donu', 20, 'Midfielder', 13000000, 0);
 
 -- --------------------------------------------------------
 
@@ -82,16 +83,16 @@ CREATE TABLE `tim` (
 --
 
 INSERT INTO `tim` (`id_tim`, `nama`, `poin`, `lokasi`, `img`, `id_pemain`) VALUES
-(0, 'PersiBanten', 100, 'Banten', '/logo/persibanten.png', NULL),
-(1, 'Persija', 50, 'Jakarta', '/logo/persija.png', NULL),
-(2, 'PSM', 48, 'Makassar', '/logo/psm.png', NULL),
-(3, 'Barito Putera', 45, 'Barito', '/logo/barito.png', NULL),
-(4, 'Sriwijaya FC', 44, 'Palembang', '/logo/sriwijaya.png', NULL),
-(5, 'Persipura', 44, 'Papua', '/logo/persipura.png', NULL),
-(6, 'Bali United', 42, 'Bali', '/logo/baliunited.png', NULL),
-(7, 'MU', 40, 'Madura', '/logo/mu.jpg', NULL),
-(8, 'Bojong Pride', 35, 'Bojongsoang', '/logo/bojong.jpg', NULL),
-(9, 'Persib', 2, 'Bandung', '/logo/persib.png', NULL);
+(0, 'PersiBanten', 100, 'Banten', 'persibanten.png', NULL),
+(1, 'Persija', 50, 'Jakarta', 'persija.png', NULL),
+(2, 'PSM', 48, 'Makassar', 'psm.png', NULL),
+(3, 'Barito Putera', 45, 'Barito', 'barito.png', NULL),
+(4, 'Sriwijaya FC', 44, 'Palembang', 'sriwijaya.png', NULL),
+(5, 'Persipura', 44, 'Papua', 'persipura.png', NULL),
+(6, 'Bali United', 42, 'Bali', 'baliunited.png', NULL),
+(7, 'MU', 40, 'Madura', 'mu.jpg', NULL),
+(8, 'Bojong Pride', 35, 'Bojongsoang', 'bojong.jpg', NULL),
+(9, 'Persib', 2, 'Bandung', 'persib.png', NULL);
 
 -- --------------------------------------------------------
 
