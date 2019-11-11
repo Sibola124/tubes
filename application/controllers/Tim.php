@@ -12,6 +12,7 @@ class Tim extends CI_Controller {
     	$data['pos'] = 1;
         $this->load->view('templates/Navbar', $data);
         $this->load->view('Tim', $data);
+        $this->load->view('admin/inputTim');
         $this->load->view('templates/footer');
     }
     public function tim1($error = NULL) {
