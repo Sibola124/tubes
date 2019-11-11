@@ -4,6 +4,7 @@ class Tim extends CI_Controller {
     {
         parent::__construct();
             $this->load->model("Tim_model");
+            $this->load->model("Tim1_model");
     }
 
     public function index($error = NULL) {
@@ -15,8 +16,8 @@ class Tim extends CI_Controller {
         $this->load->view('templates/footer');
     }
     public function tim1($error = NULL) {
-        $data['judul'] = 'Tim';
-        $data['tim'] = $this->Tim_model->getAll();
+        $data['judul'] = 'Tim1';
+        $data['pemain'] = $this->Tim1_model->getAll();
         $this->load->view('templates/Navbar', $data);
         $this->load->view('Tim/Tim1', $data);
         $this->load->view('templates/footer');
