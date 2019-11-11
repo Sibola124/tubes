@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2019 at 09:24 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Generation Time: Nov 11, 2019 at 06:51 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sibola`
+-- Database: `tubes`
 --
 
 -- --------------------------------------------------------
@@ -36,6 +36,15 @@ CREATE TABLE `pemain` (
   `gaji` int(11) NOT NULL,
   `tim` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pemain`
+--
+
+INSERT INTO `pemain` (`id_pemain`, `nama`, `usia`, `role`, `gaji`, `tim`) VALUES
+(11, 'Paijo', 20, 'Striker', 100000, 0),
+(12, 'Akbariyah', 20, 'Defender', 500000, 0),
+(13, 'Devani', 20, 'Goalkeeper', 300000, 0);
 
 -- --------------------------------------------------------
 
@@ -64,6 +73,7 @@ CREATE TABLE `tim` (
   `nama` varchar(255) NOT NULL,
   `poin` int(11) NOT NULL,
   `lokasi` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL,
   `id_pemain` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -71,17 +81,17 @@ CREATE TABLE `tim` (
 -- Dumping data for table `tim`
 --
 
-INSERT INTO `tim` (`id_tim`, `nama`, `poin`, `lokasi`, `id_pemain`) VALUES
-(0, 'PersiBanten', 100, 'Banten', NULL),
-(1, 'Persija', 50, 'Jakarta', NULL),
-(2, 'PSM', 48, 'Makassar', NULL),
-(3, 'Barito Putera', 45, 'Barito', NULL),
-(4, 'Sriwijaya FC', 44, 'Palembang', NULL),
-(5, 'Persipura', 44, 'Papua', NULL),
-(6, 'Bali United', 42, 'Bali', NULL),
-(7, 'MU', 40, 'Madura', NULL),
-(8, 'Bojong Pride', 35, 'Bojongsoang', NULL),
-(9, 'Persib', 2, 'Bandung', NULL);
+INSERT INTO `tim` (`id_tim`, `nama`, `poin`, `lokasi`, `img`, `id_pemain`) VALUES
+(0, 'PersiBanten', 100, 'Banten', '/logo/persibanten.png', NULL),
+(1, 'Persija', 50, 'Jakarta', '/logo/persija.png', NULL),
+(2, 'PSM', 48, 'Makassar', '/logo/psm.png', NULL),
+(3, 'Barito Putera', 45, 'Barito', '/logo/barito.png', NULL),
+(4, 'Sriwijaya FC', 44, 'Palembang', '/logo/sriwijaya.png', NULL),
+(5, 'Persipura', 44, 'Papua', '/logo/persipura.png', NULL),
+(6, 'Bali United', 42, 'Bali', '/logo/baliunited.png', NULL),
+(7, 'MU', 40, 'Madura', '/logo/mu.jpg', NULL),
+(8, 'Bojong Pride', 35, 'Bojongsoang', '/logo/bojong.jpg', NULL),
+(9, 'Persib', 2, 'Bandung', '/logo/persib.png', NULL);
 
 -- --------------------------------------------------------
 
