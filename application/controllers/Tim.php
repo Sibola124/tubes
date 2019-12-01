@@ -16,11 +16,43 @@ class Tim extends CI_Controller {
         $this->load->view('admin/inputTim');
         $this->load->view('templates/footer');
     }
-    public function tim1($error = NULL) {
-        $data['judul'] = 'Tim1';
+    public function tim2($error = NULL) {
+        $data['judul'] = 'Team Persija';
         $data['pemain'] = $this->Tim1_model->getAll();
         $this->load->view('templates/Navbar', $data);
-        $this->load->view('Tim/Tim1', $data);
+        $this->load->view('Tim/Persija', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function tim3($error = NULL) {
+        $data['judul'] = 'Team PSM Makassar';
+        $data['pemain'] = $this->Tim1_model->getAll();
+        $this->load->view('templates/Navbar', $data);
+        $this->load->view('Tim/PSM', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function tim4($error = NULL) {
+        $data['judul'] = 'Team Barito Putera';
+        $data['pemain'] = $this->Tim1_model->getAll();
+        $this->load->view('templates/Navbar', $data);
+        $this->load->view('Tim/Barito', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function tim5($error = NULL) {
+        $data['judul'] = 'Team Sriwijaya FC';
+        $data['pemain'] = $this->Tim1_model->getAll();
+        $this->load->view('templates/Navbar', $data);
+        $this->load->view('Tim/Sriwijaya', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function tim1($error = NULL) {
+        $data['judul'] = 'Team PersiBanten';
+        $data['pemain'] = $this->Tim1_model->getAll();
+        $this->load->view('templates/Navbar', $data);
+        $this->load->view('Tim/PersiBanten', $data);
         $this->load->view('templates/footer');
     }
 

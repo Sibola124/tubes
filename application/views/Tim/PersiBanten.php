@@ -11,23 +11,20 @@
               <thead style="background-color: #262626;">
                 <tr style="color: white;">
                   <th scope="col">Nama</th>
-                  <th scope="col">Usia</th>    
-                  <th scope="col">Role</th> 
-                  <th scope="col">Gaji</th>           
+                  <th scope="col">Role</th>    
+                  <th scope="col">Usia</th>        
                 </tr>
               </thead>
               <tbody style="color: black; background-color: #f2f2f2;">
                 <?php 
-                foreach ($pemain as $p): ?>
+                foreach ($pemain as $p):  if ($p->tim == 0){?>
                   <tr>
-                    <td><?php echo $p->nama ?></td>  
-                    <td><?php echo $p->usia ?></td> 
-                    <td><?php echo $p->role ?></td> 
-                    <td><?php echo $p->gaji ?></td> 
-                </tr>
+                  <td> <?php echo $p->nama; ?> </td>
+                  <td> <?php echo $p->role; ?> </td>
+                  <td> <?php echo $p->usia; ?> </td>
+                  </tr>
                 
-                <?php endforeach ?>
-                
+                <?php } endforeach ?>
               </tbody>
             </table>
           </div>
