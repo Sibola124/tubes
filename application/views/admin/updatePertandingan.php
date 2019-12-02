@@ -17,12 +17,20 @@
                         </div>
                         <div class="form-group">
                             <label for="nama">Tim Home</label>
+<<<<<<< HEAD
                             <input type="text" class="form-control" id="tim1" name="tim1" readonly value="<?php echo $tim1 ?>">
+=======
+                            <input type="text" class="form-control" id="tim1" name="tim1" readonly value="<?php echo $pertandingan->tim1 ?>">
+>>>>>>> 2e78e378739fdb83d30c9e83aba1c660b6dc83cb
                             <small class="form-text text-danger"><?= form_error('tim1') ?></small>
                         </div>
                         <div class="form-group">
                             <label for="nama">Tim Away</label>
+<<<<<<< HEAD
                             <input type="text" class="form-control" id="tim2" name="tim2" readonly value="<?php echo $tim2 ?>">
+=======
+                            <input type="text" class="form-control" id="tim2" name="tim2" readonly value="<?php echo $pertandingan->tim2 ?>">
+>>>>>>> 2e78e378739fdb83d30c9e83aba1c660b6dc83cb
                             <small class="form-text text-danger"><?= form_error('tim2') ?></small>
                         </div>
                         <div class="form-group">

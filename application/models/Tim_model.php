@@ -44,12 +44,19 @@ class Tim_model extends CI_Model
         $this->id_tim = $post["id_tim"];
         $this->nama = $post["nama"];
         $this->lokasi = $post["lokasi"];
+<<<<<<< HEAD
         
         $this->m = $post["m"];
         $this->s = $post["s"];
         $this->k = $post["k"];
         $this->main = $post["m"] + $post["s"] + $post["k"];
         $this->poin = $post["m"]*3 + $post["s"]*1;
+=======
+        $this->main = $post["main"];
+        $this->m = $post["m"];
+        $this->s = $post["s"];
+        $this->k = $post["k"];
+>>>>>>> 2e78e378739fdb83d30c9e83aba1c660b6dc83cb
         $this->db->update($this->_table, $this, array('id_tim' => $post['id_tim']));
     }
 }

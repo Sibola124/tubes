@@ -21,7 +21,8 @@ class Auth extends CI_Controller {
                 'username' => $row->username
             );
             $this->session->set_userdata($data);
-            redirect(site_url('Home'));
+            redirect(site_url('Home/logedIn'));
+            // redirect(site_url('Home'));
         } else {
             $error = 'username / password salah';
             $this->index($error);

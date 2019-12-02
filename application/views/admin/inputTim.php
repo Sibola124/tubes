@@ -27,12 +27,23 @@
                             <input type="text" class="form-control" id="k" name="k" readonlys value="<?php echo $tim->k ?>">
                             <small class="form-text text-danger"><?= form_error('k') ?></small>
                         </div>
+<<<<<<< HEAD
                 
+=======
+                        <?php $main = $tim->main;
+                            $main++;
+                        ?>
+                        <input type="text" name="main" value="<?php echo $main?>" hidden>
+>>>>>>> 2e78e378739fdb83d30c9e83aba1c660b6dc83cb
                         <input type="text" name="id_tim" value="<?php echo $tim->id_tim ?>" hidden>
                         <input type="text" name="nama" value="<?php echo $tim->nama ?>" hidden>
                         <input type="text" name="lokasi" value="<?php echo $tim->lokasi ?>" hidden>
 
+<<<<<<< HEAD
                         <button type="submit" name="add" class="btn btn-primary float-right">Submit</button>
+=======
+                        <button type="submit" name="add" class="btn btn-primary float-right">Tambah Pertandingan</button>
+>>>>>>> 2e78e378739fdb83d30c9e83aba1c660b6dc83cb
                     </form>
                 </div>
             </div>

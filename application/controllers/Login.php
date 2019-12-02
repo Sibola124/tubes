@@ -21,8 +21,13 @@ class Login extends CI_Controller {
                 'username' => $row->username,
                 'id' => $row->id_user
             );
+<<<<<<< HEAD
             $this->session->set_userdata("user",$data);
             redirect(site_url('Home'));
+=======
+            $this->session->set_userdata($data);
+            redirect(site_url('Home/logedIn'));
+>>>>>>> 2e78e378739fdb83d30c9e83aba1c660b6dc83cb
         } else {
             $error = 'username / password salah';
             $this->index($error);

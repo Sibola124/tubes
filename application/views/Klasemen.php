@@ -29,6 +29,7 @@
                   <tr>
                     <td><?php echo $i++ ?></td>
                     <td><img src="<?php echo base_url('images/logo/'.$t->img)?>" style="width:25px; height:25px;"><text>  </text><?php echo $t->nama ?></td>
+<<<<<<< HEAD
                     <td>
                       <?php echo $t->main ?>
                     </td>
@@ -51,6 +52,13 @@
                     </td>
                   <?php endif ?>
                     
+=======
+                    <td width="250">
+                      <a href="<?= base_url(); ?>Tim/inputtim/<?= $t->id_tim ?>" class="btn btn-success" ?>ubah
+                      </a>
+                      
+                    </td>
+>>>>>>> 2e78e378739fdb83d30c9e83aba1c660b6dc83cb
                   </tr>
                 
                 <?php endforeach ?>
