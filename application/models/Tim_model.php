@@ -5,40 +5,51 @@ class Tim_model extends CI_Model
     private $_table = "tim";
 
     public $id_tim;
-    public $nama;
-    public $lokasi;
-    public $id_pemain;
-    
+    public $main;
+    public $m;
+    public $s;
+    public $k;
+
     public function rules()
     {
         return [
-            ['field' => 'nama',
-            'label' => 'Nama',
-            'rules' => 'required'],
+            ['field' => 'm',
+            'label' => 'M',
+            'rules' => 'numeric'],
 
-            ['field' => 'lokasi',
-            'label' => 'Lokasi',
-            'rules' => 'required']
+            ['field' => 's',
+            'label' => 'S',
+            'rules' => 'numeric'],
+
+            ['field' => 'k',
+            'label' => 'K',
+            'rules' => 'numeric']
         ];
     }
 
     public function getAll()
     {
-        return $this->db->get($this->_table)->result();
+        $query = "SELECT * from tim  ORDER BY poin desc";
+        return $this->db->query($query)->result();
     }
     
     public function getById($id)
     {
-        return $this->db->get_where($this->_table, ["id_tim" => $id_tim])->row();
+        return $this->db->get_where($this->_table, ["id_tim" => $id])->row();
     }
 
-    public function saveTim($image)
+    public function InputTim()
     {
         $post = $this->input->post();
-        // $this->id = uniqid();
+        $this->id_tim = $post["id_tim"];
         $this->nama = $post["nama"];
         $this->lokasi = $post["lokasi"];
-        $this->img = $image;
-        $this->db->insert($this->_table, $this);
+        
+        $this->m = $post["m"];
+        $this->s = $post["s"];
+        $this->k = $post["k"];
+        $this->main = $post["m"] + $post["s"] + $post["k"];
+        $this->poin = $post["m"]*3 + $post["s"]*1;
+        $this->db->update($this->_table, $this, array('id_tim' => $post['id_tim']));
     }
 }

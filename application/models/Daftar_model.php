@@ -22,11 +22,11 @@ class Daftar_model extends CI_Model
             'rules' => 'required'],
 
             ['field' => 'username',
-            'label' => 'Phone Number',
+            'label' => 'Username',
             'rules' => 'required'],
             
             ['field' => 'password',
-            'label' => 'Message',
+            'label' => 'Password',
             'rules' => 'required']
         ];
     }
@@ -41,4 +41,13 @@ class Daftar_model extends CI_Model
         $this->password = $post["password"];
         $this->db->insert($this->_table, $this);
     }
+
+    public function cek_user($username, $password) {
+        $this->db->where(“email = ‘$username’ or username = ‘$username’”);
+        $this->db->where(‘password’ = $password);
+        $query = $this->db->get(‘username’);
+        return $query->row_array();
+    }
+
+
 }

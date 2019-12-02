@@ -47,7 +47,8 @@ class Pertandingan_model extends CI_Model
     }
     public function getAll()
     {
-        return $this->db->get($this->_table1)->result();
+        $query = "SELECT * from pertandingan  ORDER BY date asc";
+        return $this->db->query($query)->result();
     }
  
     public function getById($id)
@@ -67,12 +68,44 @@ class Pertandingan_model extends CI_Model
         $this->db->update($this->_table1, $this, array('id_pertandingan' => $post['id_pertandingan']));
     }
 
-    public function gettim($id)
+    public function gettim1($id)
     {
-        $this->db->select($id);
-        $this->db->from('pertandingan');
-        $this->db->join('tim', 'pertandingan.$id = tim.$id');
+        $this->db->select('nama');
+        $this->db->from('tim');
+        $this->db->join('pertandingan', 'pertandingan.tim1 = tim.id_tim');
+        $this->db->where('tim1', $id);
         $query = $this->db->get();
+        return $query->row_array();
+    }
+
+    public function gettim2($id)
+    {
+        $this->db->select('nama');
+        $this->db->from('tim');
+        $this->db->join('pertandingan', 'pertandingan.tim2 = tim.id_tim');
+        $this->db->where('tim2', $id);
+        $query = $this->db->get();
+        return $query->row_array();
+    }
+
+    public function getAlltim1($id)
+    {
+        $this->db->select('*');
+        $this->db->from('tim');
+        $this->db->join('pertandingan', 'pertandingan.tim1 = tim.id_tim');
+        $this->db->where('tim1', $id);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+
+    public function getAlltim2($id)
+    {
+        $this->db->select('*');
+        $this->db->from('tim');
+        $this->db->join('pertandingan', 'pertandingan.tim2 = tim.id_tim');
+        $this->db->where('tim2', $id);
+        $query = $this->db->get();
+        return $query->result_array();
     }
 
     public function delete($id)

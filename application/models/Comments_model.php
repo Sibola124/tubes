@@ -5,7 +5,7 @@ class Comments_model extends CI_Model {
 
 	public function push($comment, $update = false) {
 		if($update) {
-			$this->db->query("UPDATE komen set komentar = '" . $comment['komentar'] . "' where id = " . $comment['comentario_id'] );
+			$this->db->query("UPDATE komen set komentar = '" . $comment['komentar'] . "' where id = " . $comment['komentar_id'] );
 			return;
 		}
 
@@ -23,7 +23,7 @@ class Comments_model extends CI_Model {
 
 	public function del($id) {
 		$this->db->where('id', $id);
-		$this->db->delete('komentar');
+		$this->db->delete('komen');
 		return;
 	}
 }

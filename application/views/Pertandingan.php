@@ -13,22 +13,35 @@
           </div>
           <div class="card-body">
             <table class="table">
+            <thead style="background-color: #262626;">
+                <tr style="color: white;">
+                  <th scope="col">Tanggal</th>
+                  <th scope="col">Tim yang bertanding</th>
+                  <?php if ($this->session->userdata("user")['logged'] && $this->session->userdata("user")['username'] == 'admin'): ?>
+                      <th scope="col">Aksi</th>
+                  <?php endif ?>              
+                </tr>
+              </thead>
               <tbody style="color: black; background-color: #f5f5ef;">
-                <tr>
-                  <td><h5>21 September 2019</h5></td>
-                  <td><h5>Persib VS Persija</h5></td>
-                  <td><button type="button" class="btn btn-info btn-lg float-right">Lihat Hasil</button></td>
-                </tr>
-                <tr>
-                  <td><h5>21 September 2019</h5></td>
-                  <td><h5>Persib VS Persija</h5></td>
-                  <td><button type="button" class="btn btn-info btn-lg float-right">Lihat Hasil</button></td>
-                </tr>
-                <tr>
-                  <td><h5>21 September 2019</h5></td>
-                  <td><h5>Persib VS Persija</h5></td>
-                  <td><button type="button" class="btn btn-info btn-lg float-right">Lihat Hasil</button></td>
-                </tr>
+                <?php
+                foreach ($pertandingan as $p): ?>
+                  <?php if ($p->score1 != null && $p->score2 != null): ?>
+                    <tr>
+                    <td>
+                      <?php echo $p->date ?>
+                    </td>
+                    <td>
+                      <?php echo $p->tim1?> <?php echo $p->score1?> vs <?php echo $p->score2?> <?php echo $p->tim2?>
+                    </td>
+                    <?php if ($this->session->userdata("user")['logged'] && $this->session->userdata("user")['username'] == 'admin'): ?>
+                      <td width="250">
+                      <a href="<?= base_url(); ?>Pertandingan/delete/<?= $p->id_pertandingan ?>" class=" btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus Pertandingan ini?');" ?>hapus
+                      </a>
+                    </td>
+                    <?php endif ?> 
+                  </tr>
+                  <?php endif ?>
+                <?php endforeach?>
               </tbody>
             </table>
           </div>
@@ -36,3 +49,4 @@
       </div>
     </div>
   </div>
+

@@ -49,15 +49,24 @@
             <a class="nav-link" href="<?= base_url(); ?>Tim">TIM</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url(); ?>Pertandingan/inputPertandingan">input pertandingan</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= base_url(); ?>Comments">Diskusi</a>
+            <a class="nav-link" href="<?= base_url(); ?>Comments">DISKUSI</a>
           </li>
         </ul>
       </strong>
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-        <ul class="navbar-nav ml-auto">
+        <?php if ($this->session->userdata("user")['logged']): ?>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>"> Selamat Datang, 
+                  <?= $this->session->userdata("user")['username'] ?>!</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url(); ?>Login/logout">Logout</a>
+            </li>
+        </ul>
+        <?php else: ?>
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url(); ?>Daftar/input">Daftar</a>
             </li>
@@ -65,6 +74,8 @@
                 <a class="nav-link" href="<?= base_url(); ?>Login/inputlogin">Login</a>
             </li>
         </ul>
+        <?php endif ?>
+        
     </div>
     </div>
   </nav>

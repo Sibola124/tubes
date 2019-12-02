@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Tim_model extends CI_Model
+class Tim1_model extends CI_Model
 {
     private $_table = "pemain";
 
@@ -10,7 +10,6 @@ class Tim_model extends CI_Model
     public $role;
     public $gaji;
     public $tim;
- 
 
     public function getAll()
     {
@@ -21,5 +20,4 @@ class Tim_model extends CI_Model
     {
         return $this->db->get_where($this->_table, ["id_pemain" => $id_pemain])->row();
     }
-
 }

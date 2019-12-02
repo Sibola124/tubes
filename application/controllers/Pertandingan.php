@@ -9,10 +9,8 @@ class Pertandingan extends CI_Controller {
 
     }
     public function index($error = NULL) {
-    	$data = array(
-            'judul' => 'Pertandingan',
-            'error' => $error
-        );
+    	$data['judul'] = 'Hasil Pertandingan';
+        $data['pertandingan'] = $this->Pertandingan_model->getAll();
         $this->load->view('templates/Navbar', $data);
         $this->load->view('Pertandingan', $data);
         $this->load->view('templates/footer');  
@@ -37,15 +35,19 @@ class Pertandingan extends CI_Controller {
     {
         if (!isset($id)) redirect('jadwal');
        
-        $pertandingan = $this->Pertandingan_model;
+        $p = $this->Pertandingan_model;
         $validation = $this->form_validation;
-        $validation->set_rules($pertandingan->rules());
+        $validation->set_rules($p->rules());
 
         if ($validation->run()) {
-            $pertandingan->update();
+            $p->update();
         }
 
-        $data["pertandingan"] = $pertandingan->getById($id);
+        $data["pertandingan"] = $p->getById($id);
+        $id1 = $data["pertandingan"]->tim1;
+        $id2 = $data["pertandingan"]->tim2;
+        $data["tim1"] = $p->gettim1($id1)['nama'];
+        $data["tim2"] = $p->gettim2($id2)['nama'];
         if (!$data["pertandingan"]) show_404();
         
         $this->load->view('templates/Navbar', $data);

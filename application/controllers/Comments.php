@@ -41,7 +41,7 @@ class Comments extends CI_Controller {
 		$data['judul'] = 'Edit Komentar';
 		$komentar['user'] = $this->session->userdata("user");
     	$komentar['komentar'] = $this->Comments_model->pull($id);
-		if($user['logged'] && $user['id'] == $komentar['id_author']) {
+		if($komentar['user']['logged'] && $komentar['user']['id'] == $komentar['komentar']['id_author']) {
 			$this->load->view('templates/Navbar', $data);
         	$this->load->view('editComment', $komentar);
         	$this->load->view('templates/footer');
@@ -50,7 +50,9 @@ class Comments extends CI_Controller {
 	}
 
 	public function del($id) {
-		if($user['logged'] && $user['id'] == $komentar['id_author']) {
+		$komentar['user'] = $this->session->userdata("user");
+    	$komentar['komentar'] = $this->Comments_model->pull($id);
+		if($komentar['user']['logged'] && $komentar['user']['id'] == $komentar['komentar']['id_author']) {
 			$this->Comments_model->del($id);
 			redirect('/', 'refresh');
 			return;

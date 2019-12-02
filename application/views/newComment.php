@@ -11,7 +11,7 @@
 							<?php echo form_open('Comments/new'); ?>
 							<div class="form-group">
 								<label for="nama">Nama</label>
-								<input class="form-control" id="nama" readonly="" value="<?= $this->session->userdata("user")['name'] ?>"></input>
+								<input class="form-control" id="nama" readonly="" value="<?= $this->session->userdata("user")['username'] ?>"></input>
 							</div>
 							<div class="form-group">
 								<label for="komentar">Komentar</label>

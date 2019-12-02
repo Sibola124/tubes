@@ -18,9 +18,10 @@ class Login extends CI_Controller {
             $row = $this->Login_model->data_login($this->input->post('username'),$this->input->post('password'));
             $data = array(
                 'logged' => TRUE,
-                'username' => $row->username
+                'username' => $row->username,
+                'id' => $row->id_user
             );
-            $this->session->set_userdata($data);
+            $this->session->set_userdata("user",$data);
             redirect(site_url('Home'));
         } else {
             $error = 'username / password salah';
