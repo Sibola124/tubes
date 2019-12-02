@@ -48,6 +48,12 @@
           <li class="nav-item">
             <a class="nav-link" href="<?= base_url(); ?>Tim">TIM</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= base_url(); ?>Pertandingan/inputPertandingan">input pertandingan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= base_url(); ?>Comments">Diskusi</a>
+          </li>
         </ul>
       </strong>
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">

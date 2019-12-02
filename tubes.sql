@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2019 at 07:06 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.2.12
+-- Generation Time: Sep 30, 2019 at 09:24 AM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tubes`
+-- Database: `sibola`
 --
 
 -- --------------------------------------------------------
@@ -36,16 +36,6 @@ CREATE TABLE `pemain` (
   `gaji` int(11) NOT NULL,
   `tim` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pemain`
---
-
-INSERT INTO `pemain` (`id_pemain`, `nama`, `usia`, `role`, `gaji`, `tim`) VALUES
-(11, 'Paijo', 20, 'Striker', 15000000, 0),
-(12, 'Akbariyah', 20, 'Defender', 12000000, 0),
-(13, 'Depani', 20, 'Goalkeeper', 10000000, 0),
-(14, 'Donu', 20, 'Midfielder', 13000000, 0);
 
 -- --------------------------------------------------------
 
@@ -74,7 +64,6 @@ CREATE TABLE `tim` (
   `nama` varchar(255) NOT NULL,
   `poin` int(11) NOT NULL,
   `lokasi` varchar(255) NOT NULL,
-  `img` varchar(255) NOT NULL,
   `id_pemain` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -82,17 +71,17 @@ CREATE TABLE `tim` (
 -- Dumping data for table `tim`
 --
 
-INSERT INTO `tim` (`id_tim`, `nama`, `poin`, `lokasi`, `img`, `id_pemain`) VALUES
-(0, 'PersiBanten', 100, 'Banten', 'persibanten.png', NULL),
-(1, 'Persija', 50, 'Jakarta', 'persija.png', NULL),
-(2, 'PSM', 48, 'Makassar', 'psm.png', NULL),
-(3, 'Barito Putera', 45, 'Barito', 'barito.png', NULL),
-(4, 'Sriwijaya FC', 44, 'Palembang', 'sriwijaya.png', NULL),
-(5, 'Persipura', 44, 'Papua', 'persipura.png', NULL),
-(6, 'Bali United', 42, 'Bali', 'baliunited.png', NULL),
-(7, 'MU', 40, 'Madura', 'mu.jpg', NULL),
-(8, 'Bojong Pride', 35, 'Bojongsoang', 'bojong.jpg', NULL),
-(9, 'Persib', 2, 'Bandung', 'persib.png', NULL);
+INSERT INTO `tim` (`id_tim`, `nama`, `poin`, `lokasi`, `id_pemain`) VALUES
+(0, 'PersiBanten', 100, 'Banten', NULL),
+(1, 'Persija', 50, 'Jakarta', NULL),
+(2, 'PSM', 48, 'Makassar', NULL),
+(3, 'Barito Putera', 45, 'Barito', NULL),
+(4, 'Sriwijaya FC', 44, 'Palembang', NULL),
+(5, 'Persipura', 44, 'Papua', NULL),
+(6, 'Bali United', 42, 'Bali', NULL),
+(7, 'MU', 40, 'Madura', NULL),
+(8, 'Bojong Pride', 35, 'Bojongsoang', NULL),
+(9, 'Persib', 2, 'Bandung', NULL);
 
 -- --------------------------------------------------------
 

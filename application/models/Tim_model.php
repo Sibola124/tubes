@@ -37,7 +37,7 @@ class Tim_model extends CI_Model
         $post = $this->input->post();
         // $this->id = uniqid();
         $this->nama = $post["nama"];
-        $this->harga = $post["lokasi"];
+        $this->lokasi = $post["lokasi"];
         $this->img = $image;
         $this->db->insert($this->_table, $this);
     }

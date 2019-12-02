@@ -6,13 +6,13 @@
         <div class="col">
             <div class="card">
                 <div class="card-header text-center">
-                    Form Input Jadwal Pertandingan
+                    Form Update Pertandingan
                 </div>
                 <div class="card-body">
-                    <form action="<?php base_url('Pertandingan/inputPertandingan') ?>" method="post" enctype="multipart/form-data">
+                    <form action="<?php base_url('Pertandingan/edit') ?>" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="date">Waktu Pertandingan</label>
-                            <input type="text" class="form-control" id="date" name="date">
+                            <input type="text" class="form-control" id="date" name="date"value="<?php echo $pertandingan->date ?>">
                             <small class="form-text text-danger"><?= form_error('date') ?></small>
                         </div>
                         <div class="form-group">
@@ -26,7 +26,6 @@
                             ?>
                             </select>
                         </div>
-                        
                         <div class="form-group">
                             <label for="tim2">Tim Away</label>
                             <select class="form-control" name="tim2">
@@ -38,7 +37,17 @@
                             ?>
                             </select>
                         </div>
-                        <button type="submit" name="add" class="btn btn-primary float-right">Tambah Pertandingan</button>
+                        <div class="form-group">
+                            <label for="score1">Score Tim Home</label>
+                            <input type="text" class="form-control" id="score1" name="score1" value="<?php echo $pertandingan->score1 ?>">
+                            <small class="form-text text-danger"><?= form_error('score1') ?></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="score2">Score Tim Away</label>
+                            <input type="text" class="form-control" id="score2" name="score2" value="<?php echo $pertandingan->score2 ?>">
+                            <small class="form-text text-danger"><?= form_error('score2') ?></small>
+                        </div>
+                        <button type="submit" name="edit" class="btn btn-primary float-right">Update Pertandingan</button>
                     </form>
                 </div>
             </div>

@@ -16,7 +16,7 @@
                 $i = 1;
                 foreach ($tim as $t): ?>
                   <tr>
-                    <td><img src="<?php echo base_url('images/logo/'.$t->img)?>" style="width:25px; height:25px;"> <a class="nav-link" href="<?= base_url("Tim/tim".$i); ?>"><font color=black><?php echo $t->nama ?></a></font></td>  
+                    <td><img src="<?php echo base_url('images/logo/'.$t->img)?>" style="width:25px; height:25px;"> <a class="nav-link" href="<?= base_url(); ?>Tim/tim1"><font color=black><?php echo $t->nama ?></a></font></td>  
                     <?php $i++; ?>      
                   </tr>
                 

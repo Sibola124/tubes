@@ -20,18 +20,24 @@
                 </tr>
               </thead>
               <tbody style="color: black; background-color: #f5f5ef;">
-                <tr>
-                  <td><h5>5 Oktober 2019</h5></td>
-                  <td><h5>Persibanten VS Persib</h5></td>
-                </tr>
-                <tr>
-                  <td><h5>8 Oktober 2019</h5></td>
-                  <td><h5>Bojong Pride VS MU</h5></td>
-                </tr>
-                <tr>
-                  <td><h5>12 Oktober 2019</h5></td>
-                  <td><h5>Persib VS Bojong Pride</h5></td>
-                </tr>
+                <?php
+                foreach ($pertandingan as $p): ?>
+                  <tr>
+                    <td>
+                      <?php echo $p->date ?>
+                    </td>
+                    <td>
+                      
+                    </td>
+                    <td width="250">
+                      <a href="<?= base_url(); ?>Pertandingan/delete/<?= $p->id_pertandingan ?>" class=" btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus produk ini?');" ?>hapus
+                      </a>
+                      <a href="<?= base_url(); ?>Pertandingan/edit/<?= $p->id_pertandingan ?>" class="btn btn-success" ?>ubah
+                      </a>
+                      
+                    </td>
+                  </tr>
+                <?php endforeach?>
               </tbody>
             </table>
           </div>
@@ -39,3 +45,4 @@
       </div>
     </div>
   </div>
+

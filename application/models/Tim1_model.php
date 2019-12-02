@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Tim1_model extends CI_Model
+class Tim_model extends CI_Model
 {
     private $_table = "pemain";
 
