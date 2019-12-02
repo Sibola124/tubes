@@ -16,26 +16,14 @@
                             <small class="form-text text-danger"><?= form_error('date') ?></small>
                         </div>
                         <div class="form-group">
-                            <label for="tim1">Tim Home</label>
-                            <select class="form-control" name="tim1">
-                            <?php 
-                            foreach($tim as $row)
-                            { 
-                                echo '<option value="'.$row->id_tim.'">'.$row->nama.'</option>';
-                            }
-                            ?>
-                            </select>
+                            <label for="nama">Tim Home</label>
+                            <input type="text" class="form-control" id="tim1" name="tim1" readonly value="<?php echo $pertandingan->tim1 ?>">
+                            <small class="form-text text-danger"><?= form_error('tim1') ?></small>
                         </div>
                         <div class="form-group">
-                            <label for="tim2">Tim Away</label>
-                            <select class="form-control" name="tim2">
-                            <?php 
-                            foreach($tim as $row)
-                            { 
-                                echo '<option value="'.$row->id_tim.'">'.$row->nama.'</option>';
-                            }
-                            ?>
-                            </select>
+                            <label for="nama">Tim Away</label>
+                            <input type="text" class="form-control" id="tim2" name="tim2" readonly value="<?php echo $pertandingan->tim2 ?>">
+                            <small class="form-text text-danger"><?= form_error('tim2') ?></small>
                         </div>
                         <div class="form-group">
                             <label for="score1">Score Tim Home</label>
@@ -47,6 +35,8 @@
                             <input type="text" class="form-control" id="score2" name="score2" value="<?php echo $pertandingan->score2 ?>">
                             <small class="form-text text-danger"><?= form_error('score2') ?></small>
                         </div>
+                        <input type="text" name="id_pertandingan" value="<?php echo $pertandingan->id_pertandingan?>" hidden>
+                        
                         <button type="submit" name="edit" class="btn btn-primary float-right">Update Pertandingan</button>
                     </form>
                 </div>
